@@ -15,7 +15,7 @@ type List struct {
 	tail   *node
 }
 
-func Init() *List {
+func InitList() *List {
 	return &List{}
 }
 

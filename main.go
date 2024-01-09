@@ -7,7 +7,29 @@ import (
 )
 
 func main() {
-	list := linkedlists.Init()
+	// singlyLinkedListFunctions()
+	doublyLinkedListsFunctions()
+}
+
+func doublyLinkedListsFunctions() {
+	list := linkedlists.InitDoubleList()
+
+	for i := 0; i < 20; i++ {
+		list.InsertLast(i)
+	}
+
+	list.InsertAt(10, 69)
+
+	list.PrintList()
+
+	fmt.Println("/////// Reverse ////////")
+
+	list.PrintReverseList()
+
+}
+
+func singlyLinkedListFunctions() {
+	list := linkedlists.InitList()
 
 	for i := 0; i < 20; i++ {
 		list.InsertLast(i)

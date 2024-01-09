@@ -6,10 +6,12 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TODO: search how to properly test linked lists
+
 func TestLinkedLists(t *testing.T) {
 
 	t.Run("should return a pointer to list", func(t *testing.T) {
-		got := Init()
+		got := InitList()
 
 		want := &List{}
 
@@ -17,7 +19,7 @@ func TestLinkedLists(t *testing.T) {
 	})
 
 	t.Run("should set tail and head to same value if first insertion", func(t *testing.T) {
-		list := Init()
+		list := InitList()
 		node := &node{}
 
 		list.firstInsertion(node, 1)
