@@ -20,11 +20,17 @@ func doublyLinkedListsFunctions() {
 
 	list.InsertAt(10, 69)
 
+	list.InsertAt(69, 666)
+
+	list.Delete(0)
+
+	list.Delete(19)
+
 	list.PrintList()
 
 	fmt.Println("/////// Reverse ////////")
 
-	list.PrintReverseList()
+	// list.PrintReverseList()
 
 }
 

@@ -99,6 +99,48 @@ func (l *DoubleList) InsertAt(index, value int) error {
 	return fmt.Errorf("value not found")
 }
 
+func (l *DoubleList) Delete(value int) error {
+	if l.head == nil {
+		return fmt.Errorf("empty list")
+	}
+
+	n := l.head
+
+	if l.head.value == value {
+		n.next.prev = nil
+		l.head = n.next
+		n = nil
+		l.length--
+
+		return nil
+	}
+
+	if l.tail.value == value {
+		n = l.tail
+		n.prev.next = nil
+		l.tail = n.prev
+		n = nil
+		l.length--
+
+		return nil
+	}
+
+	for n != nil {
+		if n.value == value {
+			n.prev.next = n.next
+			n.next.prev = n.prev
+			n = nil
+			l.length--
+
+			return nil
+		}
+
+		n = n.next
+	}
+
+	return fmt.Errorf("value not found")
+}
+
 func (l *DoubleList) PrintList() {
 	if l.head != nil {
 		node := l.head
@@ -106,6 +148,7 @@ func (l *DoubleList) PrintList() {
 			fmt.Printf("node: %d\n", node.value)
 			node = node.next
 		}
+		fmt.Printf("lenght : %d\n", l.length)
 	} else {
 		fmt.Println("empty list")
 	}

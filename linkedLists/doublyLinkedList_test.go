@@ -25,4 +25,5 @@ func TestDoublyLinkedLists(t *testing.T) {
 		assert.Equal(t, list.head, list.tail)
 
 	})
+
 }

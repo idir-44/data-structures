@@ -27,7 +27,6 @@ func (l *List) firstInsertion(n *node, value int) {
 	n.value = value
 	l.head = n
 	l.tail = n
-
 	l.length++
 
 	return
@@ -37,15 +36,14 @@ func (l *List) InsertFirst(value int) {
 	n := &node{}
 
 	if l.head == nil && l.tail == nil {
-
 		l.firstInsertion(n, value)
+
 		return
 	}
 
 	n.value = value
 	n.next = l.head
 	l.head = n
-
 	l.length++
 }
 
@@ -53,8 +51,8 @@ func (l *List) InsertLast(value int) {
 	n := &node{}
 
 	if l.head == nil && l.tail == nil {
-
 		l.firstInsertion(n, value)
+
 		return
 	}
 
@@ -68,8 +66,8 @@ func (l *List) InsertLast(value int) {
 func (l *List) InsertAfter(index, value int) error {
 	n := &node{}
 	if l.head == nil && l.tail == nil {
-
 		l.firstInsertion(n, value)
+
 		return nil
 	}
 
@@ -80,7 +78,6 @@ func (l *List) InsertAfter(index, value int) error {
 			n.value = value
 			n.next = i.next
 			i.next = n
-
 			l.length++
 
 			return nil
