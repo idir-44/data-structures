@@ -8,7 +8,8 @@ import (
 
 func main() {
 	// singlyLinkedListFunctions()
-	doublyLinkedListsFunctions()
+	// doublyLinkedListsFunctions()
+
 }
 
 func doublyLinkedListsFunctions() {
