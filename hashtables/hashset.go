@@ -1,7 +1,6 @@
 package hashtables
 
-// dumb response for leetcode
-// use maps instead
+
 type MyHashSet struct {
 	set [1000001]bool
 }
