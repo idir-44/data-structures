@@ -1,73 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"math/rand"
 
-	linkedlists "github.com/idir-44/dataStructures/linkedLists"
+	"github.com/idir-44/dataStructures/bst"
 )
 
 func main() {
-	// singlyLinkedListFunctions()
-	// doublyLinkedListsFunctions()
+	t := bst.NewTree(45)
 
-}
-
-func doublyLinkedListsFunctions() {
-	list := linkedlists.InitDoubleList()
-
-	for i := 0; i < 20; i++ {
-		list.InsertLast(i)
+	for i := 0; i < 16; i++ {
+		t.Insert(rand.Intn(100))
 	}
 
-	list.InsertAt(10, 69)
-
-	list.InsertAt(69, 666)
-
-	list.Delete(0)
-
-	list.Delete(19)
-
-	list.PrintList()
-
-	fmt.Println("/////// Reverse ////////")
-
-	// list.PrintReverseList()
-
-}
-
-func singlyLinkedListFunctions() {
-	list := linkedlists.InitList()
-
-	for i := 0; i < 20; i++ {
-		list.InsertLast(i)
-	}
-
-	err := list.InsertAfter(8, 69)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	err = list.InsertAfter(69, 666)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	err = list.Delete(666)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	err = list.Delete(0)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	err = list.Delete(19)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	list.PrintList()
-
-	fmt.Printf("my list: %d\n", list.Length())
 }
